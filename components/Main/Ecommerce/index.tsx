@@ -2,6 +2,8 @@ import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { earningData } from "@/data";
 import { Button } from "@mui/material";
+import Area from "../Chart/Area";
+import PieChart from "../Chart/Pie";
 // import Area from "../Area/Area";
 // import "../../index.css";
 // import Pie from "../Pie/Pie";
@@ -64,7 +66,8 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
           </div>
         </div>
         <div className="bg-white col-span-4 lg:col-span-3 dark:bg-darkMode">
-          {/* <Area isOpen={false} height="35vh" /> */}3
+          {/* <Area isOpen={false} height="35vh" /> */}
+          <Area />
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode">
@@ -132,7 +135,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode">
-          {/* <Pie height="35vh" /> */}1
+          <PieChart />
         </div>
         <div className="bg-white col-span-3 lg:col-span-2 dark:bg-darkMode ">
           {/* <LineChart isOpen={false} height="35vh" /> */}2

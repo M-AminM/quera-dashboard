@@ -126,3 +126,184 @@ export const earningData = [
     pcColor: "red-600",
   },
 ];
+
+export const AreaBumpData = [
+  {
+    id: "JavaScript",
+    data: [
+      {
+        x: 2000,
+        y: 28,
+      },
+      {
+        x: 2001,
+        y: 13,
+      },
+      {
+        x: 2002,
+        y: 27,
+      },
+      {
+        x: 2003,
+        y: 29,
+      },
+      {
+        x: 2004,
+        y: 14,
+      },
+      {
+        x: 2005,
+        y: 11,
+      },
+    ],
+  },
+  {
+    id: "ReasonML",
+    data: [
+      {
+        x: 2000,
+        y: 14,
+      },
+      {
+        x: 2001,
+        y: 27,
+      },
+      {
+        x: 2002,
+        y: 30,
+      },
+      {
+        x: 2003,
+        y: 10,
+      },
+      {
+        x: 2004,
+        y: 13,
+      },
+      {
+        x: 2005,
+        y: 27,
+      },
+    ],
+  },
+  {
+    id: "TypeScript",
+    data: [
+      {
+        x: 2000,
+        y: 21,
+      },
+      {
+        x: 2001,
+        y: 25,
+      },
+      {
+        x: 2002,
+        y: 12,
+      },
+      {
+        x: 2003,
+        y: 24,
+      },
+      {
+        x: 2004,
+        y: 18,
+      },
+      {
+        x: 2005,
+        y: 20,
+      },
+    ],
+  },
+  {
+    id: "Elm",
+    data: [
+      {
+        x: 2000,
+        y: 20,
+      },
+      {
+        x: 2001,
+        y: 12,
+      },
+      {
+        x: 2002,
+        y: 12,
+      },
+      {
+        x: 2003,
+        y: 11,
+      },
+      {
+        x: 2004,
+        y: 10,
+      },
+      {
+        x: 2005,
+        y: 21,
+      },
+    ],
+  },
+  {
+    id: "CoffeeScript",
+    data: [
+      {
+        x: 2000,
+        y: 22,
+      },
+      {
+        x: 2001,
+        y: 21,
+      },
+      {
+        x: 2002,
+        y: 18,
+      },
+      {
+        x: 2003,
+        y: 14,
+      },
+      {
+        x: 2004,
+        y: 12,
+      },
+      {
+        x: 2005,
+        y: 16,
+      },
+    ],
+  },
+];
+
+export const PieChartData = [
+  {
+    id: "elixir",
+    label: "elixir",
+    value: 418,
+    color: "hsl(178, 70%, 50%)",
+  },
+  {
+    id: "go",
+    label: "go",
+    value: 540,
+    color: "hsl(290, 70%, 50%)",
+  },
+  {
+    id: "javascript",
+    label: "javascript",
+    value: 108,
+    color: "hsl(215, 70%, 50%)",
+  },
+  {
+    id: "erlang",
+    label: "erlang",
+    value: 501,
+    color: "hsl(175, 70%, 50%)",
+  },
+  {
+    id: "php",
+    label: "php",
+    value: 412,
+    color: "hsl(261, 70%, 50%)",
+  },
+];
