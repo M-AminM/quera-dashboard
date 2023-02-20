@@ -3,6 +3,7 @@ import { MdOutlineCancel } from "react-icons/md";
 import { links } from "@/data";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import styles from "./sidebar.module.css";
 
 interface Props {
   isOpen?: boolean;
@@ -17,17 +18,20 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
   console.log(pathname);
 
   const activeLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white bg-cyan-500 text-md m-2";
+    "flex items-center gap-5 pr-4 pt-3 pb-2.5 rounded-lg  text-white bg-cyan-500 text-md m-2";
   const normalLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
+    "flex items-center gap-5 pr-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
 
   return (
-    <section className="" style={{ zIndex: 20 }}>
-      <div className="ja"></div>
+    <section
+      className={` z-20 absolute right-0 top-0 md:relative w-full md:w-auto`}
+      style={{ direction: "rtl" }}
+    >
+      <div className={styles.blur}></div>
 
-      <div className="py-4 pl-4 w-56 bg-white dark:bg-darkMode ">
+      <div className="py-4 pr-4 w-56 bg-white dark:bg-darkMode ">
         <div className="flex justify-between">
-          <h1 className="font-bold pb-8 dark:text-white">Shoppy</h1>
+          <h1 className="font-bold pb-8 dark:text-white">ادمین</h1>
           <span className="pt-1.5 hidden md:block pr-4 dark:color-white">
             <MdOutlineCancel color={`${true ? "white" : "black"}`} />
           </span>
@@ -42,10 +46,10 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
 
                   return (
                     <Link
-                      href={`/${link.name}`}
+                      href={`/${link.url}`}
                       key={index}
                       className={`${
-                        pathname === `/${link.name}` ? activeLink : normalLink
+                        pathname === `/${link.url}` ? activeLink : normalLink
                       }`}
                     >
                       <span

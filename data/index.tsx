@@ -12,63 +12,73 @@ import { RiContactsLine } from "react-icons/ri";
 
 export const links = [
   {
-    title: "Dashboard",
+    title: "داشبورد",
     links: [
       {
-        name: "ecommerce",
+        url: "ecommerce",
+        name: "تجارت الکترونیک",
         icon: <FiShoppingBag />,
       },
     ],
   },
 
   {
-    title: "Pages",
+    title: "صفحات",
     links: [
       {
-        name: "orders",
+        url: "orders",
+        name: "سفارشات",
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: "employees",
+        url: "employees",
+        name: "کارمندان",
         icon: <IoMdContacts />,
       },
       {
-        name: "customers",
+        url: "customers",
+        name: "مشتریان",
         icon: <RiContactsLine />,
       },
     ],
   },
   {
-    title: "Apps",
+    title: "برنامه ها",
     links: [
       {
-        name: "calendar",
+        url: "calendar",
+        name: "تقویم",
         icon: <AiOutlineCalendar />,
       },
       {
-        name: "kanban",
+        url: "kanban",
+        name: "تابلوی راهنما",
         icon: <BsKanban />,
       },
     ],
   },
   {
-    title: "Charts",
+    title: "نمودار ها",
     links: [
       {
-        name: "line",
+        url: "line",
+        name: "خطی",
         icon: <AiOutlineStock />,
       },
       {
-        name: "area",
+        url: "area",
+        name: "سطحی",
         icon: <AiOutlineAreaChart />,
       },
 
       {
-        name: "bar",
+        url: "bar",
+        name: "میله ای",
         icon: <AiOutlineBarChart />,
       },
       {
-        name: "pie",
+        url: "pie",
+        name: "دایره ای",
         icon: <FiPieChart />,
       },
     ],

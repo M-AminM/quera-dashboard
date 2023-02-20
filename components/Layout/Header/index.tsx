@@ -16,9 +16,6 @@ interface Props {
 const Header: React.FC<Props> = ({ isOpen, theme, setIsOpen, setTheme }) => {
   return (
     <header className="p-4 flex justify-between w-full">
-      <span className="cursor-pointer">
-        <BiMenu size={20} color={false ? "#FF4A59" : "#03C9D7"} />
-      </span>
       <div className="flex gap-6">
         <SlBasket
           className="cursor-pointer"
@@ -41,6 +38,9 @@ const Header: React.FC<Props> = ({ isOpen, theme, setIsOpen, setTheme }) => {
           color={false ? "#FF4A59" : "#03C9D7"}
         />
       </div>
+      <span className="cursor-pointer">
+        <BiMenu size={20} color={false ? "#FF4A59" : "#03C9D7"} />
+      </span>
     </header>
   );
 };
