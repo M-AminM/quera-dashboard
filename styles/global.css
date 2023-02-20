@@ -1,10 +1,16 @@
 html {
-  /* font-family: Vazirmatn, sans-serif !important; */
-
-  overflow: hidden;
+  font-family: iransans, sans-serif !important;
+  overflow: hidden;   
 }
 
+/* width */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
 @font-face {
-  font-family: "iransans";  
+  font-family: "iransans";
   src: url("../assets/fonts/IRANSansXFaNum-Regular.ttf");
 }

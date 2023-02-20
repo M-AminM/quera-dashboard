@@ -24,27 +24,33 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
 
   return (
     <>
-      {isOpen && (
-        <section
-          className={` z-20 absolute right-0 top-0 md:relative w-full md:w-auto`}
-          style={{ direction: "rtl" }}
-        >
-          <div onClick={() => setIsOpen(!isOpen)} className={styles.blur}></div>
+      <section
+        className={` z-20 absolute duration-100 ease-in right-0 top-0 md:relative  ${
+          isOpen ? "w-full" : ""
+        }  md:w-auto`}
+        style={{ direction: "rtl" }}
+      >
+        {/* <div onClick={() => setIsOpen(!isOpen)} className={styles.blur}></div> */}
 
-          <div className="py-4 pr-4 w-56 bg-white dark:bg-darkMode ">
-            <div className="flex justify-between">
-              <h1 className="font-bold pb-8 dark:text-white">ادمین</h1>
-              <span
-                className="pt-1.5 block md:hidden pl-4 dark:color-white"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                <MdOutlineCancel color="#000" />
-              </span>
-            </div>
+        <div
+          className={`${styles.blur} ${
+            isOpen ? "w-56" : "w-0"
+          } duration-100 ease-in bg-red-500 dark:bg-darkMode `}
+        >
+          <div className="py-4 pr-4 ">
             <div className="flex flex-col h-screen overflow-auto">
+              <div className="flex justify-between">
+                <h1 className="font-bold pb-8 dark:text-white">ادمین</h1>
+                <span
+                  className="pt-1.5 block md:hidden pl-4 dark:color-white"
+                  onClick={() => setIsOpen(!isOpen)}
+                >
+                  <MdOutlineCancel color="#000" />
+                </span>
+              </div>
               {links.map((data, index) => {
                 return (
-                  <div key={index}>
+                  <div className="w-52" key={index}>
                     <h2 className="text-sm font-medium text-gray ">
                       {data.title}
                     </h2>
@@ -77,8 +83,8 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
               })}
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
     </>
   );
 };

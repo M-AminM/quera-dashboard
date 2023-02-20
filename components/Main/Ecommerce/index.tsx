@@ -2,16 +2,9 @@ import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { earningData } from "@/data";
 import { Button } from "@mui/material";
-import Area from "../Chart/Area";
-
-import { toFarsiNumber } from "@/components/Base/Numbers";
 import AreaChart from "../AreaChart";
 import PieChart from "../PieChart";
 import BarChart from "../BarChart";
-// import Area from "../Area/Area";
-// import "../../index.css";
-// import Pie from "../Pie/Pie";
-// import LineChart from "../Line/Line";
 
 interface Props {
   theme?: boolean;
@@ -28,9 +21,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
           <div className="flex justify-between h-full items-center">
             <div className="flex flex-col gap-1">
               <h2 className="font-bold dark:text-white">درآمد</h2>
-              <span className="dark:text-white">
-                ${toFarsiNumber("63,448.78")}
-              </span>
+              <span className="dark:text-white">63,448.78</span>
               <Button
                 style={{ backgroundColor: !false ? "#03C9D7" : "#FF4A59" }}
                 variant="contained"
@@ -63,7 +54,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
                   <div className="flex flex-col">
                     <div className="flex gap-2">
                       <span className="font-bold dark:text-white">
-                        {toFarsiNumber(data.amount)}
+                        {data.amount}
                       </span>
                       <span className="text-red">{data.percentage}</span>
                     </div>
@@ -74,8 +65,8 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
             })}
           </div>
         </div>
-        <div className="bg-white col-span-4 lg:col-span-3 dark:bg-darkMode">
-          <AreaChart isOpen={false} height="35vh" />
+        <div className="bg-white col-span-4 lg:col-span-3 dark:bg-darkMode h-[40vh]">
+          {/* <AreaChart isOpen={false} height="35vh" /> */}
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode">
@@ -140,11 +131,11 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
           </div>
         </div>
 
-        <div className="bg-white col-span-2 dark:bg-darkMode">
-          <PieChart height="35vh" />
+        <div className="bg-white col-span-2 dark:bg-darkMode h-[40vh]">
+          {/* <PieChart height="35vh" /> */}
         </div>
-        <div className="bg-white col-span-3 lg:col-span-2 dark:bg-darkMode ">
-          <BarChart height="35vh" />
+        <div className="bg-white col-span-3 lg:col-span-2 dark:bg-darkMode h-[40vh]">
+          {/* <BarChart height="35vh" /> */}
         </div>
         <div className="bg-white p-4 dark:bg-darkMode">
           <h2 className="font-semibold pb-4 dark:text-white">

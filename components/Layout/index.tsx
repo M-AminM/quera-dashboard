@@ -11,7 +11,9 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
         <Header isOpen={isOpen} setIsOpen={setIsOpen} />
         {children}
       </div>
-      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <div className="ease-out delay-150 duration-300" style={{transition: "0.5s"}}>
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+      </div>
     </div>
   );
 };
