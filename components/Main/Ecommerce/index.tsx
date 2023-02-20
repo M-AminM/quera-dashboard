@@ -4,6 +4,8 @@ import { earningData } from "@/data";
 import { Button } from "@mui/material";
 import Area from "../Chart/Area";
 import PieChart from "../Chart/Pie";
+import BarChart from "../Chart/Bar";
+import { toFarsiNumber } from "@/components/Base/Numbers";
 // import Area from "../Area/Area";
 // import "../../index.css";
 // import Pie from "../Pie/Pie";
@@ -15,18 +17,23 @@ interface Props {
 
 const Ecommerce: React.FC<Props> = ({ theme }) => {
   return (
-    <section className={`px-8 pt-2 pb-8 ${false ? "dark" : ""}`}>
+    <section
+      className={`px-8 pt-2 pb-8 ${false ? "dark" : ""}`}
+      style={{ direction: "rtl" }}
+    >
       <div className="flex flex-col gap-2 sm:grid md:grid-cols-4 lg:grid-cols-5">
         <div className="bg-white p-4 dark:bg-darkMode ">
           <div className="flex justify-between h-full items-center">
             <div className="flex flex-col gap-1">
-              <h2 className="font-bold dark:text-white">Earnings</h2>
-              <span className="dark:text-white">$63,448.78</span>
+              <h2 className="font-bold dark:text-white">درآمد</h2>
+              <span className="dark:text-white">
+                ${toFarsiNumber("63,448.78")}
+              </span>
               <Button
                 style={{ backgroundColor: !false ? "#03C9D7" : "#FF4A59" }}
                 variant="contained"
               >
-                Download
+                دانلود
               </Button>
             </div>
             <div className="flex justify-center items-center">
@@ -54,7 +61,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
                   <div className="flex flex-col">
                     <div className="flex gap-2">
                       <span className="font-bold dark:text-white">
-                        {data.amount}
+                        {toFarsiNumber(data.amount)}
                       </span>
                       <span className="text-red">{data.percentage}</span>
                     </div>
@@ -71,18 +78,16 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode">
-          <h2 className="font-semibold p-4 dark:text-white">
-            Recent Transactions
-          </h2>
+          <h2 className="font-semibold p-4 dark:text-white">معاملات اخیر</h2>
 
           <div className=" border-y-4 border-mainBg">
             <div className="flex justify-between px-4 py-2">
               <div className="flex flex-col ">
                 <span className="text-midBlue text-sm">01e4dsa</span>
-                <span className="dark:text-white text-sm">johndoe</span>
+                <span className="dark:text-white text-sm">امین</span>
               </div>
               <div className="flex justify-center items-center">
-                <span className="dark:text-white text-sm">2021-09-01</span>
+                <span className="dark:text-white text-sm"></span>
               </div>
               <div className="bg-midBlue px-2 rounded flex justidy-center items-center text-white">
                 <p className="text-sm">$43.95</p>
@@ -138,11 +143,11 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
           <PieChart />
         </div>
         <div className="bg-white col-span-3 lg:col-span-2 dark:bg-darkMode ">
-          {/* <LineChart isOpen={false} height="35vh" /> */}2
+          <BarChart />
         </div>
         <div className="bg-white p-4 dark:bg-darkMode">
           <h2 className="font-semibold pb-4 dark:text-white">
-            Revenue Updates
+            به روز رسانی درآمد
           </h2>
           <div className="flex flex-col gap-6">
             <div>
@@ -152,11 +157,11 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
                   <span className="font-semibold text-sm text-white">23%</span>
                 </div>
               </div>
-              <span className="text-gray">Budget</span>
+              <span className="text-gray">بودجه</span>
             </div>
             <div className="flex flex-col gap-1.5">
               <h2 className="dark:text-white font-semibold">$48,487</h2>
-              <span className="text-gray">Expense</span>
+              <span className="text-gray">هزینه</span>
             </div>
 
             <Button

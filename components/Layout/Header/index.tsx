@@ -7,9 +7,9 @@ import { MdLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 
 interface Props {
-  isOpen?: boolean;
+  isOpen: boolean;
   theme?: boolean;
-  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setTheme?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -38,7 +38,7 @@ const Header: React.FC<Props> = ({ isOpen, theme, setIsOpen, setTheme }) => {
           color={false ? "#FF4A59" : "#03C9D7"}
         />
       </div>
-      <span className="cursor-pointer">
+      <span className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
         <BiMenu size={20} color={false ? "#FF4A59" : "#03C9D7"} />
       </span>
     </header>
