@@ -6,11 +6,11 @@ interface LayoutProps extends React.PropsWithChildren {}
 const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <div className="bg-zinc-200 flex relative">
-      <div className="w-full h-screen">
+      <div className="w-full h-screen overflow-auto">
         <Header />
         {children}
       </div>
-      <Sidebar />
+      {/* <Sidebar /> */}
     </div>
   );
 };

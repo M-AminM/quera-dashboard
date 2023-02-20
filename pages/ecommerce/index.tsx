@@ -1,7 +1,8 @@
+import Ecommerce from "@/components/Main/Ecommerce";
 import React from "react";
 
-const Ecommerce = () => {
-  return <div>Ecommerce</div>;
+const EcommercePage = () => {
+  return <Ecommerce />;
 };
 
-export default Ecommerce;
+export default EcommercePage;
