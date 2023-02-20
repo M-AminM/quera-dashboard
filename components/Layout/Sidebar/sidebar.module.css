@@ -8,5 +8,4 @@
   backdrop-filter: blur(4px);
   background-color: rgba(235, 235, 240, 0.5);
   width: calc(100% - 224px);
-  transition: 1s;
 }

@@ -1,9 +1,8 @@
-import React from 'react'
+import Orders from "@/components/Main/Orders";
+import React from "react";
 
-const Orders = () => {
-  return (
-    <div>Orders</div>
-  )
-}
+const OrdersPage = () => {
+  return <Orders />;
+};
 
-export default Orders
+export default OrdersPage;

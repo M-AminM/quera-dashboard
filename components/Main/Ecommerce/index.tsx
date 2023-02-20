@@ -66,7 +66,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
           </div>
         </div>
         <div className="bg-white col-span-4 lg:col-span-3 dark:bg-darkMode h-[40vh]">
-          {/* <AreaChart isOpen={false} height="35vh" /> */}
+          <AreaChart isOpen={false} height="35vh" />
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode">
@@ -132,10 +132,10 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode h-[40vh]">
-          {/* <PieChart height="35vh" /> */}
+          <PieChart height="35vh" />
         </div>
         <div className="bg-white col-span-3 lg:col-span-2 dark:bg-darkMode h-[40vh]">
-          {/* <BarChart height="35vh" /> */}
+          <BarChart height="35vh" />
         </div>
         <div className="bg-white p-4 dark:bg-darkMode">
           <h2 className="font-semibold pb-4 dark:text-white">

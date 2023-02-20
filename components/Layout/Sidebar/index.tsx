@@ -25,24 +25,23 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
   return (
     <>
       <section
-        className={` z-20 absolute duration-100 ease-in right-0 top-0 md:relative  ${
+        className={` z-20 absolute duration-100 ease-in right-0 top-0   ${
           isOpen ? "w-full" : ""
-        }  md:w-auto`}
+        }  `}
         style={{ direction: "rtl" }}
       >
-        {/* <div onClick={() => setIsOpen(!isOpen)} className={styles.blur}></div> */}
-
+        <div onClick={() => setIsOpen(!isOpen)} className={styles.blur}></div>
         <div
-          className={`${styles.blur} ${
+          className={`${
             isOpen ? "w-56" : "w-0"
-          } duration-100 ease-in bg-red-500 dark:bg-darkMode `}
+          } duration-100 ease-in bg-white dark:bg-darkMode `}
         >
           <div className="py-4 pr-4 ">
             <div className="flex flex-col h-screen overflow-auto">
               <div className="flex justify-between">
                 <h1 className="font-bold pb-8 dark:text-white">ادمین</h1>
                 <span
-                  className="pt-1.5 block md:hidden pl-4 dark:color-white"
+                  className="pt-1.5 block  pl-4 dark:color-white cursor-pointer"
                   onClick={() => setIsOpen(!isOpen)}
                 >
                   <MdOutlineCancel color="#000" />
