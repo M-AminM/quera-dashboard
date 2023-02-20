@@ -29,7 +29,7 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
           className={` z-20 absolute right-0 top-0 md:relative w-full md:w-auto`}
           style={{ direction: "rtl" }}
         >
-          <div className={styles.blur}></div>
+          <div onClick={() => setIsOpen(!isOpen)} className={styles.blur}></div>
 
           <div className="py-4 pr-4 w-56 bg-white dark:bg-darkMode ">
             <div className="flex justify-between">

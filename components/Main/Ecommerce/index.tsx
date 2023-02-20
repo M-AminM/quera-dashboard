@@ -3,9 +3,11 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { earningData } from "@/data";
 import { Button } from "@mui/material";
 import Area from "../Chart/Area";
-import PieChart from "../Chart/Pie";
-import BarChart from "../Chart/Bar";
+
 import { toFarsiNumber } from "@/components/Base/Numbers";
+import AreaChart from "../AreaChart";
+import PieChart from "../PieChart";
+import BarChart from "../BarChart";
 // import Area from "../Area/Area";
 // import "../../index.css";
 // import Pie from "../Pie/Pie";
@@ -21,7 +23,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
       className={`px-8 pt-2 pb-8 ${false ? "dark" : ""}`}
       style={{ direction: "rtl" }}
     >
-      <div className="flex flex-col gap-2 sm:grid md:grid-cols-4 lg:grid-cols-5">
+      <div className="flex flex-col gap-2 md:grid md:grid-cols-4 lg:grid-cols-5">
         <div className="bg-white p-4 dark:bg-darkMode ">
           <div className="flex justify-between h-full items-center">
             <div className="flex flex-col gap-1">
@@ -73,8 +75,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
           </div>
         </div>
         <div className="bg-white col-span-4 lg:col-span-3 dark:bg-darkMode">
-          {/* <Area isOpen={false} height="35vh" /> */}
-          <Area />
+          <AreaChart isOpen={false} height="35vh" />
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode">
@@ -140,10 +141,10 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode">
-          <PieChart />
+          <PieChart height="35vh" />
         </div>
         <div className="bg-white col-span-3 lg:col-span-2 dark:bg-darkMode ">
-          <BarChart />
+          <BarChart height="35vh" />
         </div>
         <div className="bg-white p-4 dark:bg-darkMode">
           <h2 className="font-semibold pb-4 dark:text-white">
@@ -167,12 +168,12 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
             <Button
               style={{
                 backgroundColor: !false ? "#03C9D7" : "#FF4A59",
-                fontSize: "12px",
+                fontSize: "14px",
                 fontWeight: "600",
               }}
               variant="contained"
             >
-              Download Report
+              دانلود گزارش
             </Button>
           </div>
         </div>

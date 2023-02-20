@@ -2,7 +2,7 @@ import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
 import { BarData } from "@/data";
 
-const BarChart = () => {
+const Bar = () => {
   return (
     <ResponsiveBar
       data={BarData}
@@ -108,4 +108,4 @@ const BarChart = () => {
   );
 };
 
-export default BarChart;
+export default Bar;

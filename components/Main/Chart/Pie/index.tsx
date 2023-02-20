@@ -1,7 +1,7 @@
 import { ResponsivePie } from "@nivo/pie";
 import { PieChartData } from "@/data";
 
-const PieChart: React.FC = () => {
+const Pie: React.FC = () => {
   return (
     <ResponsivePie
       data={PieChartData}
@@ -123,4 +123,4 @@ const PieChart: React.FC = () => {
   );
 };
 
-export default PieChart;
+export default Pie;
