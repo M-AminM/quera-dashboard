@@ -11,6 +11,8 @@ import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchStudents, studentValue } from "@/slices/studentsSlice";
 import { deleteStudent, deleteStudentValue } from "@/slices/removeStudentSlice";
+import { RxDotFilled } from "react-icons/rx";
+import Modal from "../Modal";
 
 interface StudentsProps extends React.PropsWithChildren {
   filterData: never[];
@@ -27,6 +29,10 @@ const Students: React.FunctionComponent<StudentsProps> = ({ filterData }) => {
   useEffect(() => {
     dispatch(fetchStudents());
   }, [remove]);
+
+  // 63f4d8ab22cec926c4ea457a
+  
+  
 
   return (
     <section className="" style={{ direction: "rtl" }}>
@@ -69,6 +75,13 @@ const Students: React.FunctionComponent<StudentsProps> = ({ filterData }) => {
               >
                 تاریخ ثبت نام
               </TableCell>
+              <TableCell
+                className="dark:text-white"
+                sx={{ fontWeight: "bold" }}
+                align="right"
+              >
+                فعالیت
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -98,7 +111,22 @@ const Students: React.FunctionComponent<StudentsProps> = ({ filterData }) => {
                     {data.phoneNumber}
                   </TableCell>
                   <TableCell className="dark:text-white  " align="right">
-                    {data.registerDate}
+                    {new Date(data.registerDate).toLocaleDateString("fa-IR")}
+                  </TableCell>
+                  <TableCell
+                    className="dark:text-white flex justify-end items-center"
+                    align="right"
+                  >
+                    <Modal
+                      name={data.fullName}
+                      isActive={data.isActive}
+                      id={data._id}
+                    />
+                    <RxDotFilled
+                      className={`text-lg ${
+                        data.isActive ? "text-green-500" : "text-red-500"
+                      }`}
+                    />
                   </TableCell>
                 </TableRow>
               )
