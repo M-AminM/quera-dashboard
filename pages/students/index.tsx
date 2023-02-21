@@ -1,29 +1,21 @@
-import Students from "@/components/Main/Students";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Students from "@/components/Main/Students";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchStudents, studentValue } from "@/slices/studentsSlice";
 
 interface StudentProps extends React.PropsWithChildren {}
-
 const StudentsPage: React.FunctionComponent<StudentProps> = () => {
-  const [data, setData] = useState<any>([]);
-  const [filterData, setFilterData] = useState<any>([]);
-  const authorizationToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjgxMjE2MTZiZWZjZDNmODQzOTcwODQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NTI2Mjk4ODV9.RYwyhkF3_nJpFv7O2Wy9lT0TpKRxcC80TCy-M9rnlXA";
+  const student = useSelector(studentValue);
+  const [filterData, setFilterData] = useState([]);
+  const { students } = student;
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/student/getall", {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Auth-Token": authorizationToken,
-        },
-      })
-      .then((res) => setData(res.data.result))
-      .catch((err) => console.log(err.response.data));
+    dispatch(fetchStudents());
   }, []);
 
-  const clickHandler = (e: any) => {
-    const filterData = data.filter((data: any) =>
+  const chanegHandler = (e: any) => {
+    const filterData = students.filter((data: any) =>
       data.fullName.toLowerCase().includes(e.target.value.toLowerCase())
     );
     setFilterData(filterData);
@@ -37,7 +29,7 @@ const StudentsPage: React.FunctionComponent<StudentProps> = () => {
           <input
             className="px-4 py-1 text-sm rounded-r-xl outline-0"
             placeholder="جستوجو دانشجو"
-            onChange={clickHandler}
+            onChange={chanegHandler}
           />
           <button className="px-4 py-1 text-sm bg-cyan-500 text-white rounded-l-xl">
             جستوجو
@@ -45,33 +37,9 @@ const StudentsPage: React.FunctionComponent<StudentProps> = () => {
         </div>
       </div>
       <div></div>
-      <Students
-        data={data}
-        setData={setData}
-        filterData={filterData}
-        token={authorizationToken}
-      />
+      <Students filterData={filterData} />
     </div>
   );
 };
 
 export default StudentsPage;
-
-// export async function getStaticProps() {
-//   const authorizationToken =
-//     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjgxMjE2MTZiZWZjZDNmODQzOTcwODQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NTI2Mjk4ODV9.RYwyhkF3_nJpFv7O2Wy9lT0TpKRxcC80TCy-M9rnlXA";
-
-//   const res = await axios.get("http://localhost:5000/api/student/getall", {
-//     headers: {
-//       "Content-Type": "application/json",
-//       "X-Auth-Token": authorizationToken,
-//     },
-//   });
-//   const data = res.data;
-
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }

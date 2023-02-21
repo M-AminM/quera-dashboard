@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -7,35 +8,25 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { AiFillDelete } from "react-icons/ai";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchStudents, studentValue } from "@/slices/studentsSlice";
+import { deleteStudent, deleteStudentValue } from "@/slices/removeStudentSlice";
 
 interface StudentsProps extends React.PropsWithChildren {
-  data: any;
-  filterData: any;
-  setData: any;
-  token: string;
+  filterData: never[];
 }
-const Students: React.FunctionComponent<StudentsProps> = ({
-  data,
-  filterData,
-  setData,
-  token,
-}) => {
+const Students: React.FunctionComponent<StudentsProps> = ({ filterData }) => {
+  const student = useSelector(studentValue);
+  const remove = useSelector(deleteStudentValue);
+  const dispatch = useDispatch();
+  const { students } = student;
   const removeStudent = (id: any) => {
-    axios
-      .delete(`http://localhost:5000/api/student/${id}`, {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Auth-Token": token,
-        },
-        data: {
-          id: id,
-        },
-      })
-      .then((res) =>
-        setData(data.filter((data: any) => data._id !== res.data.result._id))
-      );
+    dispatch(deleteStudent(id));
   };
+
+  useEffect(() => {
+    dispatch(fetchStudents());
+  }, [remove]);
 
   return (
     <section className="" style={{ direction: "rtl" }}>
@@ -81,7 +72,7 @@ const Students: React.FunctionComponent<StudentsProps> = ({
             </TableRow>
           </TableHead>
           <TableBody>
-            {(filterData?.length === 0 ? data : filterData)?.map(
+            {(filterData?.length === 0 ? students : filterData)?.map(
               (data: any, index: number): any => (
                 <TableRow
                   key={index}
