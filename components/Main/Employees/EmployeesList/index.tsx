@@ -9,10 +9,18 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useDispatch, useSelector } from "react-redux";
 import { employeesValue, fetchEmployees } from "@/slices/employeesSlice";
-import { deleteEmployee, deleteEmployeeValue } from "@/slices/removeEmployeeSlice";
+import {
+  deleteEmployee,
+  deleteEmployeeValue,
+} from "@/slices/removeEmployeeSlice";
 import { AiFillDelete } from "react-icons/ai";
 
-const EmployeesList: React.FunctionComponent = () => {
+interface EmployeesProps extends React.PropsWithChildren {
+  filterData: never[];
+}
+const EmployeesList: React.FunctionComponent<EmployeesProps> = ({
+  filterData,
+}) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchEmployees());
@@ -59,41 +67,45 @@ const EmployeesList: React.FunctionComponent = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {employees.map((employee: any) => (
-              <TableRow
-                key={employee._id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell
-                  className="dark:text-white flex justify-end items-center gap-2"
-                  align="right"
+            {(filterData?.length === 0 ? employees : filterData).map(
+              (employee: any) => (
+                <TableRow
+                  key={employee._id}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  {employee.fullName}
-                  <AiFillDelete
-                    onClick={() => removeEmployee(employee._id)}
-                    className="cursor-pointer text-lg hover:text-cyan-500 duration-150 ease-in"
-                  />
-                </TableCell>
-                <TableCell className="dark:text-white  " align="right">
-                  {employee.address}
-                </TableCell>
-                <TableCell className="dark:text-white" align="right">
-                  {employee.email}
-                </TableCell>
-                <TableCell className="dark:text-white" align="right">
-                  {employee.nationalId}
-                </TableCell>
-                <TableCell className="dark:text-white" align="right">
-                  {employee.phoneNumber}
-                </TableCell>
-                <TableCell className="dark:text-white  " align="right">
-                  {new Date(employee.registerDate).toLocaleDateString("fa-IR")}
-                </TableCell>
-                <TableCell className="dark:text-white  " align="right">
-                  {employee.isActive ? "فعال" : "غیر فعال"}
-                </TableCell>
-              </TableRow>
-            ))}
+                  <TableCell
+                    className="dark:text-white flex justify-end items-center gap-2"
+                    align="right"
+                  >
+                    {employee.fullName}
+                    <AiFillDelete
+                      onClick={() => removeEmployee(employee._id)}
+                      className="cursor-pointer text-lg hover:text-cyan-500 duration-150 ease-in"
+                    />
+                  </TableCell>
+                  <TableCell className="dark:text-white  " align="right">
+                    {employee.address}
+                  </TableCell>
+                  <TableCell className="dark:text-white" align="right">
+                    {employee.email}
+                  </TableCell>
+                  <TableCell className="dark:text-white" align="right">
+                    {employee.nationalId}
+                  </TableCell>
+                  <TableCell className="dark:text-white" align="right">
+                    {employee.phoneNumber}
+                  </TableCell>
+                  <TableCell className="dark:text-white  " align="right">
+                    {new Date(employee.registerDate).toLocaleDateString(
+                      "fa-IR"
+                    )}
+                  </TableCell>
+                  <TableCell className="dark:text-white  " align="right">
+                    {employee.isActive ? "فعال" : "غیر فعال"}
+                  </TableCell>
+                </TableRow>
+              )
+            )}
           </TableBody>
         </Table>
       </TableContainer>
