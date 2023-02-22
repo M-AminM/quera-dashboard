@@ -15,8 +15,6 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen, theme }) => {
   const router = useRouter();
   const { pathname } = router;
 
-  console.log(pathname);
-
   const activeLink =
     "flex items-center gap-5 pr-4 pt-3 pb-2.5 rounded-lg  text-white bg-cyan-500 text-md m-2";
   const normalLink =

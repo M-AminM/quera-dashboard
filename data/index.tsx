@@ -17,7 +17,7 @@ export const links = [
     title: "داشبورد",
     links: [
       {
-        url: "ecommerce",
+        url: "",
         name: "تجارت الکترونیک",
         icon: <FiShoppingBag />,
       },
@@ -44,29 +44,24 @@ export const links = [
       },
     ],
   },
-  {
-    title: "برنامه ها",
-    links: [
-      {
-        url: "calendar",
-        name: "تقویم",
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        url: "kanban",
-        name: "تابلوی راهنما",
-        icon: <BsKanban />,
-      },
-    ],
-  },
+  // {
+  //   title: "برنامه ها",
+  //   links: [
+  //     {
+  //       url: "calendar",
+  //       name: "تقویم",
+  //       icon: <AiOutlineCalendar />,
+  //     },
+  //     {
+  //       url: "kanban",
+  //       name: "تابلوی راهنما",
+  //       icon: <BsKanban />,
+  //     },
+  //   ],
+  // },
   {
     title: "نمودار ها",
     links: [
-      {
-        url: "line",
-        name: "خطی",
-        icon: <AiOutlineStock />,
-      },
       {
         url: "area",
         name: "سطحی",

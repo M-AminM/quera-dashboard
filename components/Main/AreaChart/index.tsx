@@ -11,7 +11,7 @@ const AreaChart: React.FC<Props> = ({ isOpen, height }) => {
   const dynamicWidth: string = "calc(100vw - " + "220px" + ")";
 
   return (
-    <Box style={{ width: isOpen ? dynamicWidth : "" }}>
+    <Box>
       <Box height={height}>
         <Area />
       </Box>

@@ -5,12 +5,17 @@ import { Button } from "@mui/material";
 import AreaChart from "../AreaChart";
 import PieChart from "../PieChart";
 import BarChart from "../BarChart";
+import { useSelector } from "react-redux";
+import { studentValue } from "@/slices/studentsSlice";
 
 interface Props {
   theme?: boolean;
 }
 
 const Ecommerce: React.FC<Props> = ({ theme }) => {
+  const { students } = useSelector(studentValue);
+  const lastStudents = students.slice(-4);
+
   return (
     <section
       className={`px-8 pt-2 pb-8 ${false ? "dark" : ""}`}
@@ -70,65 +75,32 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode">
-          <h2 className="font-semibold p-4 dark:text-white">معاملات اخیر</h2>
+          <h2 className="font-semibold p-4 dark:text-white">دانشجویان اخیر</h2>
 
-          <div className=" border-y-4 border-mainBg">
-            <div className="flex justify-between px-4 py-2">
-              <div className="flex flex-col ">
-                <span className="text-midBlue text-sm">01e4dsa</span>
-                <span className="dark:text-white text-sm">امین</span>
+          <div className="">
+            {lastStudents.reverse().map((studnet: any) => (
+              <div className="flex justify-between px-4 py-2" key={studnet._id}>
+                <div className="flex flex-col ">
+                  <span className="text-midBlue text-sm">
+                    {studnet.nationalId}
+                  </span>
+                  <span className="dark:text-white text-sm">
+                    {studnet.fullName}
+                  </span>
+                </div>
+                <div className="flex justify-center items-center">
+                  <span className="dark:text-white sm:text-sm text-xs">
+                    {studnet.email}
+                  </span>
+                </div>
+                <div className="bg-midBlue px-2 rounded sm:flex justidy-center items-center text-black hidden">
+                  <p className="text-sm">
+                    {studnet.isActive ? "فعال" : "غیر فعال"}
+                  </p>
+                </div>
               </div>
-              <div className="flex justify-center items-center">
-                <span className="dark:text-white text-sm"></span>
-              </div>
-              <div className="bg-midBlue px-2 rounded flex justidy-center items-center text-white">
-                <p className="text-sm">$43.95</p>
-              </div>
-            </div>
+            ))}
           </div>
-
-          {/* <div className=" border-b-4 border-mainBg">
-            <div className="flex justify-between px-4 py-2">
-              <div className="flex flex-col ">
-                <span className="text-midBlue text-sm">01e4dsa</span>
-                <span className="dark:text-white text-sm">johndoe</span>
-              </div>
-              <div className="flex justify-center items-center">
-                <span className="dark:text-white text-sm">2021-09-01</span>
-              </div>
-              <div className="bg-midBlue px-2 rounded flex justidy-center items-center text-white">
-                <p className="text-sm">$43.95</p>
-              </div>
-            </div>
-          </div> */}
-          {/* <div className=" border-b-4 border-mainBg">
-            <div className="flex justify-between px-4 py-2">
-              <div className="flex flex-col ">
-                <span className="text-midBlue text-sm">01e4dsa</span>
-                <span className="dark:text-white text-sm">johndoe</span>
-              </div>
-              <div className="flex justify-center items-center">
-                <span className="dark:text-white text-sm">2021-09-01</span>
-              </div>
-              <div className="bg-midBlue px-2 rounded flex justidy-center items-center text-white">
-                <p className="text-sm">$43.95</p>
-              </div>
-            </div>
-          </div>
-          <div className=" border-mainBg">
-            <div className="flex justify-between px-4 py-2">
-              <div className="flex flex-col ">
-                <span className="text-midBlue text-sm">01e4dsa</span>
-                <span className="dark:text-white text-sm">johndoe</span>
-              </div>
-              <div className="flex justify-center items-center">
-                <span className="dark:text-white text-sm">2021-09-01</span>
-              </div>
-              <div className="bg-midBlue px-2 rounded flex justidy-center items-center text-white">
-                <p className="text-sm">$43.95</p>
-              </div>
-            </div>
-          </div> */}
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode h-[40vh]">

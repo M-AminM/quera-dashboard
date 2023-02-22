@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Students from "@/components/Main/Students";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchStudents, studentValue } from "@/slices/studentsSlice";
+import { useSelector } from "react-redux";
+import { studentValue } from "@/slices/studentsSlice";
 
 interface StudentProps extends React.PropsWithChildren {}
 const StudentsPage: React.FunctionComponent<StudentProps> = () => {
   const student = useSelector(studentValue);
   const [filterData, setFilterData] = useState([]);
   const { students } = student;
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchStudents());
-  }, []);
 
   const chanegHandler = (e: any) => {
     const filterData = students.filter((data: any) =>
