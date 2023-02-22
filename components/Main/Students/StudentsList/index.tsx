@@ -22,6 +22,7 @@ const StudentsList: React.FunctionComponent<StudentsProps> = ({
   const remove = useSelector(deleteStudentValue);
   const dispatch = useDispatch();
   const { students } = student;
+  
   const removeStudent = (id: any) => {
     dispatch(deleteStudent(id));
   };
@@ -30,54 +31,31 @@ const StudentsList: React.FunctionComponent<StudentsProps> = ({
     dispatch(fetchStudents());
   }, [remove]);
 
+  const tableCell = [
+    { id: 1, title: "دانشجو" },
+    { id: 2, title: "ایمیل" },
+    { id: 3, title: "کد ملی" },
+    { id: 4, title: "شماره موبایل" },
+    { id: 5, title: "تاریخ ثبت نام" },
+    { id: 6, title: "فعالیت" },
+  ];
+
   return (
     <section>
       <TableContainer className="dark:bg-slate-700" component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                دانشجو
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                ایمیل
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                کدملی
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                شماره موبایل
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                تاریخ ثبت نام
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                فعالیت
-              </TableCell>
+              {tableCell.map((cell) => (
+                <TableCell
+                  key={cell.id}
+                  className="dark:text-white"
+                  sx={{ fontWeight: "bold" }}
+                  align="right"
+                >
+                  {cell.title}
+                </TableCell>
+              ))}
             </TableRow>
           </TableHead>
           <TableBody>

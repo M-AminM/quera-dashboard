@@ -9,6 +9,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useDispatch, useSelector } from "react-redux";
 import { employeesValue, fetchEmployees } from "@/slices/employeesSlice";
+import { deleteEmployee, deleteEmployeeValue } from "@/slices/removeEmployeeSlice";
+import { AiFillDelete } from "react-icons/ai";
 
 const EmployeesList: React.FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -18,6 +20,25 @@ const EmployeesList: React.FunctionComponent = () => {
 
   const employeesData = useSelector(employeesValue);
   const { employees } = employeesData;
+  const remove = useSelector(deleteEmployeeValue);
+
+  const removeEmployee = (id: any) => {
+    dispatch(deleteEmployee(id));
+  };
+
+  useEffect(() => {
+    dispatch(fetchEmployees());
+  }, [remove]);
+
+  const tableCell = [
+    { id: 1, title: "کارمند" },
+    { id: 2, title: "آدرس" },
+    { id: 3, title: "ایمیل" },
+    { id: 4, title: "کد ملی" },
+    { id: 5, title: "موبایل" },
+    { id: 6, title: "تاریخ ثبت نام" },
+    { id: 7, title: "فعالیت" },
+  ];
 
   return (
     <section className="px-8 pt-2 pb-8 md:p-2 ">
@@ -25,56 +46,16 @@ const EmployeesList: React.FunctionComponent = () => {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                کارمند
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                آدرس
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                ایمیل
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                کد ملی
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                موبایل
-              </TableCell>
-
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                تاریخ ثبت نام
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                فعالیت
-              </TableCell>
+              {tableCell.map((cell) => (
+                <TableCell
+                  key={cell.id}
+                  className="dark:text-white"
+                  sx={{ fontWeight: "bold" }}
+                  align="right"
+                >
+                  {cell.title}
+                </TableCell>
+              ))}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -83,8 +64,15 @@ const EmployeesList: React.FunctionComponent = () => {
                 key={employee._id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell className="dark:text-white " align="right">
+                <TableCell
+                  className="dark:text-white flex justify-end items-center gap-2"
+                  align="right"
+                >
                   {employee.fullName}
+                  <AiFillDelete
+                    onClick={() => removeEmployee(employee._id)}
+                    className="cursor-pointer text-lg hover:text-cyan-500 duration-150 ease-in"
+                  />
                 </TableCell>
                 <TableCell className="dark:text-white  " align="right">
                   {employee.address}
