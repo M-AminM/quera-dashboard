@@ -87,7 +87,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
             </div>
           </div>
 
-          <div className=" border-b-4 border-mainBg">
+          {/* <div className=" border-b-4 border-mainBg">
             <div className="flex justify-between px-4 py-2">
               <div className="flex flex-col ">
                 <span className="text-midBlue text-sm">01e4dsa</span>
@@ -100,8 +100,8 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
                 <p className="text-sm">$43.95</p>
               </div>
             </div>
-          </div>
-          <div className=" border-b-4 border-mainBg">
+          </div> */}
+          {/* <div className=" border-b-4 border-mainBg">
             <div className="flex justify-between px-4 py-2">
               <div className="flex flex-col ">
                 <span className="text-midBlue text-sm">01e4dsa</span>
@@ -128,7 +128,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
                 <p className="text-sm">$43.95</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="bg-white col-span-2 dark:bg-darkMode h-[40vh]">
