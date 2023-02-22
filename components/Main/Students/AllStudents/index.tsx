@@ -18,7 +18,6 @@ const AllStudents: React.FunctionComponent<StudentsProps> = ({ data }) => {
   return (
     <section
       className="px-8 pt-2 pb-8 md:p-2 "
-      style={{ direction: "rtl" }}
     ></section>
   );
 };

@@ -14,7 +14,7 @@ const Ecommerce: React.FunctionComponent<EcommerceProps> = () => {
   const lastStudents = students.slice(-4);
 
   return (
-    <section className="px-8 pt-2 pb-8" style={{ direction: "rtl" }}>
+    <section className="px-8 pt-2 pb-8">
       <div className="flex flex-col gap-2 md:grid md:grid-cols-4 lg:grid-cols-5">
         <div className="bg-white p-4 dark:bg-slate-700 rounded">
           <div className="flex justify-between h-full items-center">

@@ -17,7 +17,7 @@ const StudentsPage: React.FunctionComponent<StudentProps> = () => {
   };
 
   return (
-    <div className="px-8 pt-2 pb-8 md:p-2" style={{ direction: "rtl" }}>
+    <div className="px-8 pt-2 pb-8 md:p-2">
       <div className="pb-4 flex flex-col gap-4 sm:flex-row">
         <p className="text-sm dark:text-white">تمام دانشجویان</p>
         <div>
