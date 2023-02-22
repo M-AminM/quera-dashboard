@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Area from "../Chart/Area";
+import Area from "./Main";
 
 interface AreaChartProps extends React.PropsWithChildren {
   isOpen: boolean;

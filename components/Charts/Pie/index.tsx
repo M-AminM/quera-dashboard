@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Pie from "../Chart/Pie";
+import Pie from "./Main";
 
 interface PieChartProps extends React.PropsWithChildren {
   height: string;

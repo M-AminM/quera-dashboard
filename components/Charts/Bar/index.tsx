@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Bar from "../Chart/Bar";
+import Bar from "./Main";
 
 interface BarChartProps extends React.PropsWithChildren {
   height: string;

@@ -2,9 +2,9 @@ import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { earningData } from "@/data";
 import { Button } from "@mui/material";
-import AreaChart from "../AreaChart";
-import PieChart from "../PieChart";
-import BarChart from "../BarChart";
+import AreaChart from "@/components/Charts/Area";
+import PieChart from "@/components/Charts/Pie";
+import BarChart from "@/components/Charts/Bar";
 import { useSelector } from "react-redux";
 import { studentValue } from "@/slices/studentsSlice";
 
