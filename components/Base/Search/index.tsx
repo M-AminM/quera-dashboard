@@ -3,10 +3,12 @@ import React from "react";
 interface SearchProps extends React.PropsWithChildren {
   data: any;
   setFilterData: any;
+  title: string;
 }
 const Search: React.FunctionComponent<SearchProps> = ({
   data,
   setFilterData,
+  title,
 }) => {
   const chanegHandler = (e: any) => {
     const filterData = data.filter((data: any) =>
@@ -15,8 +17,8 @@ const Search: React.FunctionComponent<SearchProps> = ({
     setFilterData(filterData);
   };
   return (
-    <div className="pb-4 flex flex-col gap-4 sm:flex-row">
-      <p className="text-sm dark:text-white">تمام دانشجویان</p>
+    <div className="pb-4 flex flex-col items-center gap-4 sm:flex-row">
+      <p className="text-sm dark:text-white">تمام {title}</p>
       <div>
         <input
           className="px-4 py-1 text-sm rounded-r-xl outline-0"

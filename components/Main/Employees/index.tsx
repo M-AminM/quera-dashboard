@@ -10,7 +10,7 @@ const Employees = () => {
 
   return (
     <div className="px-8 pt-2 pb-8 md:p-2">
-      <Search data={employees} setFilterData={setFilterData} />
+      <Search data={employees} setFilterData={setFilterData} title="کارمندان" />
       <EmployeesList filterData={filterData} />
     </div>
   );

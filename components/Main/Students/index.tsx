@@ -11,7 +11,7 @@ const Students: React.FunctionComponent<StudentProps> = () => {
 
   return (
     <div className="px-8 pt-2 pb-8 md:p-2">
-      <Search data={students} setFilterData={setFilterData} />
+      <Search data={students} setFilterData={setFilterData} title="دانشجویان" />
       <StudentsList filterData={filterData} />
     </div>
   );
