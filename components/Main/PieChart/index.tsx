@@ -2,16 +2,14 @@ import React from "react";
 import { Box } from "@mui/material";
 import Pie from "../Chart/Pie";
 
-interface Props {
+interface PieChartProps extends React.PropsWithChildren {
   height: string;
 }
 
-const PieChart: React.FC<Props> = ({ height }) => {
+const PieChart: React.FunctionComponent<PieChartProps> = ({ height }) => {
   return (
-    <Box m="20px">
-      <Box height={height}>
-        <Pie />
-      </Box>
+    <Box m="20px" height={height}>
+      <Pie />
     </Box>
   );
 };

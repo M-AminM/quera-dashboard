@@ -2,16 +2,13 @@ import React from "react";
 import { Box } from "@mui/material";
 import Bar from "../Chart/Bar";
 
-interface Props {
+interface BarChartProps extends React.PropsWithChildren {
   height: string;
 }
-
-const BarChart: React.FC<Props> = ({ height }) => {
+const BarChart: React.FunctionComponent<BarChartProps> = ({ height }) => {
   return (
-    <Box>
-      <Box height={height}>
-        <Bar />
-      </Box>
+    <Box height={height}>
+      <Bar />
     </Box>
   );
 };

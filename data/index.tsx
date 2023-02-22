@@ -28,6 +28,12 @@ export const links = [
     title: "صفحات",
     links: [
       {
+        url: "students",
+        name: "دانشجویان",
+        icon: <RiContactsLine />,
+        id: 4,
+      },
+      {
         url: "orders",
         name: "سفارشات",
         icon: <AiOutlineShoppingCart />,
@@ -38,12 +44,6 @@ export const links = [
         name: "استادان",
         icon: <IoMdContacts />,
         id: 3,
-      },
-      {
-        url: "students",
-        name: "دانشجویان",
-        icon: <RiContactsLine />,
-        id: 4,
       },
     ],
     id: 2,
@@ -408,7 +408,7 @@ export const ordersData = [
   {
     OrderID: 10248,
     CustomerName: "امین",
-    TotalAmount: 32.38,
+    TotalAmount: 80,
     OrderItems: "جاوااسکریپت",
     Location: "تهران",
     Status: "در حال تکمیل",
@@ -419,7 +419,7 @@ export const ordersData = [
   {
     OrderID: 1024812,
     CustomerName: "امین",
-    TotalAmount: 32.38,
+    TotalAmount: 80,
     OrderItems: "جاوااسکریپت",
     Location: "تهران",
     Status: "در حال تکمیل",
@@ -431,7 +431,7 @@ export const ordersData = [
   {
     OrderID: 1024832112,
     CustomerName: "امین",
-    TotalAmount: 32.38,
+    TotalAmount: 80,
     OrderItems: "جاوااسکریپت",
     Location: "تهران",
     Status: "در حال تکمیل",
@@ -442,7 +442,7 @@ export const ordersData = [
   {
     OrderID: 102481422,
     CustomerName: "امین",
-    TotalAmount: 32.38,
+    TotalAmount: 80,
     OrderItems: "جاوااسکریپت",
     Location: "تهران",
     Status: "در حال تکمیل",
@@ -453,7 +453,7 @@ export const ordersData = [
   {
     OrderID: 10245812,
     CustomerName: "امین",
-    TotalAmount: 32.38,
+    TotalAmount: 80,
     OrderItems: "جاوااسکریپت",
     Location: "تهران",
     Status: "در حال تکمیل",
@@ -464,7 +464,7 @@ export const ordersData = [
   {
     OrderID: 10233144812,
     CustomerName: "امین",
-    TotalAmount: 32.38,
+    TotalAmount: 80,
     OrderItems: "جاوااسکریپت",
     Location: "تهران",
     Status: "در حال تکمیل",
@@ -475,7 +475,7 @@ export const ordersData = [
   {
     OrderID: 1024811244122,
     CustomerName: "امین",
-    TotalAmount: 32.38,
+    TotalAmount: 80,
     OrderItems: "جاوااسکریپت",
     Location: "تهران",
     Status: "در حال تکمیل",
@@ -486,7 +486,7 @@ export const ordersData = [
   {
     OrderID: 1024821441212,
     CustomerName: "امین",
-    TotalAmount: 32.38,
+    TotalAmount: 80,
     OrderItems: "جاوااسکریپت",
     Location: "تهران",
     Status: "در حال تکمیل",

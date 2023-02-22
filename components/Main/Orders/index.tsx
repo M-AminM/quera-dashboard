@@ -11,10 +11,17 @@ import { ordersData } from "@/data";
 const Orders: React.FunctionComponent = () => {
   return (
     <section className="px-8 pt-2 pb-8 md:p-2 ">
-      <TableContainer className="dark:bg-darkMode" component={Paper}>
+      <TableContainer className="dark:bg-slate-700" component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
+              <TableCell
+                className="dark:text-white"
+                sx={{ fontWeight: "bold" }}
+                align="right"
+              >
+                لوگو
+              </TableCell>
               <TableCell
                 className="dark:text-white"
                 sx={{ fontWeight: "bold" }}
@@ -34,7 +41,7 @@ const Orders: React.FunctionComponent = () => {
                 sx={{ fontWeight: "bold" }}
                 align="right"
               >
-                مقدار کل
+                تعداد دانشجو
               </TableCell>
               <TableCell
                 className="dark:text-white"
@@ -42,13 +49,6 @@ const Orders: React.FunctionComponent = () => {
                 align="right"
               >
                 وضعیت
-              </TableCell>
-              <TableCell
-                className="dark:text-white"
-                sx={{ fontWeight: "bold" }}
-                align="right"
-              >
-                عکس
               </TableCell>
             </TableRow>
           </TableHead>
@@ -58,6 +58,13 @@ const Orders: React.FunctionComponent = () => {
                 key={index}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
+                <TableCell className="dark:text-white " align="right">
+                  <img
+                    className="w-20 h-20 object-cover rounded"
+                    src={row.ProductImage}
+                    alt={row.OrderItems}
+                  />
+                </TableCell>
                 <TableCell className="dark:text-white" align="right">
                   {row.OrderItems}
                 </TableCell>
@@ -69,13 +76,6 @@ const Orders: React.FunctionComponent = () => {
                 </TableCell>
                 <TableCell className="dark:text-white" align="right">
                   {row.Status}
-                </TableCell>
-                <TableCell className="dark:text-white flex " align="right">
-                  <img
-                    className="w-20 h-20 object-cover rounded"
-                    src={row.ProductImage}
-                    alt={row.OrderItems}
-                  />
                 </TableCell>
               </TableRow>
             ))}
