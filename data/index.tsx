@@ -34,16 +34,16 @@ export const links = [
         id: 4,
       },
       {
+        url: "employees",
+        name: "کارمندان",
+        icon: <IoMdContacts />,
+        id: 3,
+      },
+      {
         url: "orders",
         name: "سفارشات",
         icon: <AiOutlineShoppingCart />,
         id: 2,
-      },
-      {
-        url: "teachers",
-        name: "استادان",
-        icon: <IoMdContacts />,
-        id: 3,
       },
     ],
     id: 2,

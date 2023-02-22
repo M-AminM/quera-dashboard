@@ -71,6 +71,13 @@ const StudentsList: React.FunctionComponent<StudentsProps> = ({
               >
                 تاریخ ثبت نام
               </TableCell>
+              <TableCell
+                className="dark:text-white"
+                sx={{ fontWeight: "bold" }}
+                align="right"
+              >
+                فعالیت
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -100,7 +107,10 @@ const StudentsList: React.FunctionComponent<StudentsProps> = ({
                     {data.phoneNumber}
                   </TableCell>
                   <TableCell className="dark:text-white  " align="right">
-                    {data.registerDate}
+                    {new Date(data.registerDate).toLocaleDateString("fa-IR")}
+                  </TableCell>
+                  <TableCell className="dark:text-white  " align="right">
+                    {data.isActive ? "فعال" : "غیر فعال"}
                   </TableCell>
                 </TableRow>
               )
