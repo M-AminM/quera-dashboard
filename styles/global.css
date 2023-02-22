@@ -3,12 +3,9 @@ html {
   overflow: hidden;   
 }
 
-/* width */
 ::-webkit-scrollbar {
   display: none;
 }
-
-
 
 @font-face {
   font-family: "iransans";

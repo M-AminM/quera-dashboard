@@ -2,13 +2,13 @@ import { RootState } from "./../store";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export interface CounterState {
+export interface RemoveStudentState {
   loading: boolean;
   students: {};
   error: string;
 }
 
-const initialState: CounterState = {
+const initialState: RemoveStudentState = {
   loading: false,
   students: {},
   error: "",
@@ -48,7 +48,6 @@ export const deleteStudentSlice = createSlice({
     });
   },
 });
-
 
 export const deleteStudentValue = (state: RootState) => state.deleteStudent;
 

@@ -30,7 +30,7 @@ const Students: React.FunctionComponent<StudentsProps> = ({ filterData }) => {
 
   return (
     <section className="" style={{ direction: "rtl" }}>
-      <TableContainer className="dark:bg-darkMode" component={Paper}>
+      <TableContainer className="dark:bg-slate-700" component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>

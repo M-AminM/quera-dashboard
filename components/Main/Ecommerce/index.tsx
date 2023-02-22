@@ -8,34 +8,28 @@ import BarChart from "../BarChart";
 import { useSelector } from "react-redux";
 import { studentValue } from "@/slices/studentsSlice";
 
-interface Props {
-  theme?: boolean;
-}
-
-const Ecommerce: React.FC<Props> = ({ theme }) => {
+interface EcommerceProps extends React.PropsWithChildren {}
+const Ecommerce: React.FunctionComponent<EcommerceProps> = () => {
   const { students } = useSelector(studentValue);
   const lastStudents = students.slice(-4);
 
   return (
-    <section
-      className={`px-8 pt-2 pb-8 ${false ? "dark" : ""}`}
-      style={{ direction: "rtl" }}
-    >
+    <section className="px-8 pt-2 pb-8" style={{ direction: "rtl" }}>
       <div className="flex flex-col gap-2 md:grid md:grid-cols-4 lg:grid-cols-5">
-        <div className="bg-white p-4 dark:bg-darkMode ">
+        <div className="bg-white p-4 dark:bg-slate-700 rounded">
           <div className="flex justify-between h-full items-center">
             <div className="flex flex-col gap-1">
               <h2 className="font-bold dark:text-white">درآمد</h2>
               <span className="dark:text-white">63,448.78</span>
               <Button
-                style={{ backgroundColor: !false ? "#03C9D7" : "#FF4A59" }}
+                className="dark:bg-red-500 bg-cyan-500"
                 variant="contained"
               >
                 دانلود
               </Button>
             </div>
             <div className="flex justify-center items-center">
-              <div className="bg-midBlue w-10 h-10 rounded-full flex justify-center items-center bg-cyan-500 dark:bg-red">
+              <div className="bg-midBlue w-10 h-10 rounded-full flex justify-center items-center bg-cyan-500 dark:bg-red-500">
                 <BsCurrencyDollar color="#fff" />
               </div>
             </div>
@@ -46,7 +40,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
             {earningData.map((data, index) => {
               return (
                 <div
-                  className="bg-white rounded flex flex-col p-4 w-full dark:bg-darkMode"
+                  className="bg-white dark:bg-slate-700 rounded flex flex-col p-4 w-full dark:bg-darkMode"
                   key={index}
                 >
                   <div
@@ -61,27 +55,29 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
                       <span className="font-bold dark:text-white">
                         {data.amount}
                       </span>
-                      <span className="text-red">{data.percentage}</span>
+                      <span className="text-red-500 dark:text-red-400 ">
+                        {data.percentage}
+                      </span>
                     </div>
-                    <span className="text-gray">{data.title}</span>
+                    <span className="text-gray-400 ">{data.title}</span>
                   </div>
                 </div>
               );
             })}
           </div>
         </div>
-        <div className="bg-white col-span-4 lg:col-span-3 dark:bg-darkMode h-[40vh]">
+        <div className="bg-white dark:bg-slate-700 col-span-4 lg:col-span-3 dark:bg-darkMode h-[40vh]">
           <AreaChart isOpen={false} height="35vh" />
         </div>
 
-        <div className="bg-white col-span-2 dark:bg-darkMode">
+        <div className="bg-white dark:bg-slate-700 col-span-2 dark:bg-darkMode">
           <h2 className="font-semibold p-4 dark:text-white">دانشجویان اخیر</h2>
 
           <div className="">
             {lastStudents.reverse().map((studnet: any) => (
               <div className="flex justify-between px-4 py-2" key={studnet._id}>
                 <div className="flex flex-col ">
-                  <span className="text-midBlue text-sm">
+                  <span className="text-cyan-600 text-sm">
                     {studnet.nationalId}
                   </span>
                   <span className="dark:text-white text-sm">
@@ -94,7 +90,7 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
                   </span>
                 </div>
                 <div className="bg-midBlue px-2 rounded sm:flex justidy-center items-center text-black hidden">
-                  <p className="text-sm">
+                  <p className="text-sm dark:text-white">
                     {studnet.isActive ? "فعال" : "غیر فعال"}
                   </p>
                 </div>
@@ -103,13 +99,13 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
           </div>
         </div>
 
-        <div className="bg-white col-span-2 dark:bg-darkMode h-[40vh]">
+        <div className="bg-white dark:bg-slate-700 col-span-2 dark:bg-darkMode h-[40vh]">
           <PieChart height="35vh" />
         </div>
-        <div className="bg-white col-span-3 lg:col-span-2 dark:bg-darkMode h-[40vh]">
+        <div className="bg-white dark:bg-slate-700 col-span-3 lg:col-span-2 dark:bg-darkMode h-[40vh]">
           <BarChart height="35vh" />
         </div>
-        <div className="bg-white p-4 dark:bg-darkMode">
+        <div className="bg-white dark:bg-slate-700 p-4 dark:bg-darkMode">
           <h2 className="font-semibold pb-4 dark:text-white">
             به روز رسانی درآمد
           </h2>
@@ -121,19 +117,15 @@ const Ecommerce: React.FC<Props> = ({ theme }) => {
                   <span className="font-semibold text-sm text-white">23%</span>
                 </div>
               </div>
-              <span className="text-gray">بودجه</span>
+              <span className="text-gray-400">بودجه</span>
             </div>
             <div className="flex flex-col gap-1.5">
               <h2 className="dark:text-white font-semibold">$48,487</h2>
-              <span className="text-gray">هزینه</span>
+              <span className="text-gray-400">هزینه</span>
             </div>
 
             <Button
-              style={{
-                backgroundColor: !false ? "#03C9D7" : "#FF4A59",
-                fontSize: "14px",
-                fontWeight: "600",
-              }}
+              className="dark:bg-red-500 bg-cyan-500 font-semibold"
               variant="contained"
             >
               دانلود گزارش

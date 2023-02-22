@@ -2,13 +2,13 @@ import { RootState } from "./../store";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export interface CounterState {
+export interface StudentsState {
   loading: boolean;
   students: [];
   error: string;
 }
 
-const initialState: CounterState = {
+const initialState: StudentsState = {
   loading: false,
   students: [],
   error: "",

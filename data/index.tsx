@@ -1,12 +1,10 @@
 import {
-  AiOutlineCalendar,
   AiOutlineShoppingCart,
   AiOutlineAreaChart,
   AiOutlineBarChart,
-  AiOutlineStock,
 } from "react-icons/ai";
 import { FiShoppingBag, FiPieChart, FiBarChart } from "react-icons/fi";
-import { BsKanban, BsBoxSeam } from "react-icons/bs";
+import { BsBoxSeam } from "react-icons/bs";
 import { IoMdContacts } from "react-icons/io";
 import { RiContactsLine } from "react-icons/ri";
 import { MdOutlineSupervisorAccount } from "react-icons/md";
@@ -20,8 +18,10 @@ export const links = [
         url: "",
         name: "تجارت الکترونیک",
         icon: <FiShoppingBag />,
+        id: 1,
       },
     ],
+    id: 1,
   },
 
   {
@@ -31,34 +31,23 @@ export const links = [
         url: "orders",
         name: "سفارشات",
         icon: <AiOutlineShoppingCart />,
+        id: 2,
       },
       {
         url: "teachers",
         name: "استادان",
         icon: <IoMdContacts />,
+        id: 3,
       },
       {
         url: "students",
         name: "دانشجویان",
         icon: <RiContactsLine />,
+        id: 4,
       },
     ],
+    id: 2,
   },
-  // {
-  //   title: "برنامه ها",
-  //   links: [
-  //     {
-  //       url: "calendar",
-  //       name: "تقویم",
-  //       icon: <AiOutlineCalendar />,
-  //     },
-  //     {
-  //       url: "kanban",
-  //       name: "تابلوی راهنما",
-  //       icon: <BsKanban />,
-  //     },
-  //   ],
-  // },
   {
     title: "نمودار ها",
     links: [
@@ -66,19 +55,23 @@ export const links = [
         url: "area",
         name: "سطحی",
         icon: <AiOutlineAreaChart />,
+        id: 5,
       },
 
       {
         url: "bar",
         name: "میله ای",
         icon: <AiOutlineBarChart />,
+        id: 6,
       },
       {
         url: "pie",
         name: "دایره ای",
         icon: <FiPieChart />,
+        id: 7,
       },
     ],
+    id: 3,
   },
 ];
 
