@@ -1,7 +1,8 @@
 import Orders from "@/components/Main/Orders";
 import React from "react";
 
-const OrdersPage = () => {
+interface OrdersPageProps extends React.PropsWithChildren {}
+const OrdersPage: React.FunctionComponent<OrdersPageProps> = () => {
   return <Orders />;
 };
 
