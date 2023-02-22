@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { links } from "@/data";
 import Link from "next/link";
@@ -16,6 +16,12 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
 }) => {
   const router = useRouter();
   const { pathname } = router;
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsOpen(!isOpen);
+    }
+  }, [router.asPath]);
 
   const activeLink =
     "flex items-center gap-5 pr-4 pt-3 pb-2.5 rounded-lg  text-white bg-cyan-500 text-md m-2";
