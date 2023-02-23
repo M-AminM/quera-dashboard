@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { AiFillEdit } from "react-icons/ai";
+import React from "react";
 
 interface ModalProps extends React.PropsWithChildren {
   isActive: boolean;
