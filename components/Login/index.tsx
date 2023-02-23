@@ -5,16 +5,13 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const router = useRouter();
   const { status } = useSession();
 
   useEffect(() => {
-    if(status === "authenticated") {
-      router.push("/dashboard")
+    if (status === "authenticated") {
+      router.push("/dashboard");
     }
   }, [router]);
 
@@ -22,8 +19,15 @@ const Login = () => {
     const res = await signIn("credentials", {
       email: data.email,
       password: data.password,
-      callbackUrl: "/dashboard",
+
+      redirect: false,
     });
+
+    if (!res?.error) {
+      router.push("/dashboard");
+    } else {
+      alert("ایمیل یا پسورد وارد شده نادرست است");
+    }
   };
   return (
     <section className=" dark:bg-slate-900 bg-zinc-200 h-screen">
