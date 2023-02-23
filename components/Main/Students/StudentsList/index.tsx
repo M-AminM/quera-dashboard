@@ -11,6 +11,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchStudents, studentValue } from "@/slices/studentsSlice";
 import { deleteStudent, deleteStudentValue } from "@/slices/removeStudentSlice";
+import Modal from "@/components/Base/Modal";
 
 interface StudentsProps extends React.PropsWithChildren {
   filterData: never[];
@@ -22,7 +23,7 @@ const StudentsList: React.FunctionComponent<StudentsProps> = ({
   const remove = useSelector(deleteStudentValue);
   const dispatch = useDispatch();
   const { students } = student;
-  
+
   const removeStudent = (id: any) => {
     dispatch(deleteStudent(id));
   };
@@ -74,6 +75,7 @@ const StudentsList: React.FunctionComponent<StudentsProps> = ({
                       onClick={() => removeStudent(data._id)}
                       className="cursor-pointer text-lg hover:text-cyan-500 duration-150 ease-in"
                     />
+                    <Modal />
                   </TableCell>
                   <TableCell className="dark:text-white" align="right">
                     {data.email}
