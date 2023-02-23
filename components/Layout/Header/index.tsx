@@ -7,6 +7,7 @@ import { MdLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { themeValue, toggle } from "@/slices/themeSlice";
+import { signOut } from "next-auth/react";
 
 interface HeaderProps extends React.PropsWithChildren {
   isOpen: boolean;
@@ -25,6 +26,12 @@ const Header: React.FunctionComponent<HeaderProps> = ({
         <BiMenu size={20} color={false ? "#FF4A59" : "#03C9D7"} />
       </span>
       <div className="flex gap-6">
+        <button
+          onClick={() => signOut({ callbackUrl: "/" })}
+          className="text-sm text-red-500 font-semibold tracking-wider"
+        >
+          Logout
+        </button>
         <button className="cursor-pointer" onClick={() => dispatch(toggle())}>
           {value ? (
             <MdLightMode size={20} color={false ? "#FF4A59" : "#03C9D7"} />

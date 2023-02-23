@@ -67,7 +67,7 @@ const Ecommerce: React.FunctionComponent<EcommerceProps> = () => {
           </div>
         </div>
         <div className="bg-white dark:bg-slate-700 col-span-4 lg:col-span-3 dark:bg-darkMode h-[40vh]">
-          <AreaChart isOpen={false} height="35vh" />
+          <AreaChart height="35vh" />
         </div>
 
         <div className="bg-white dark:bg-slate-700 col-span-2 dark:bg-darkMode">

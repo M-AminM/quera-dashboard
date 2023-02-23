@@ -3,7 +3,7 @@ import studentsSlice from "./slices/studentsSlice";
 import deleteStudentSlice from "./slices/removeStudentSlice";
 import themeSlice from "./slices/themeSlice";
 import employeesSlice from "./slices/employeesSlice";
-import deleteEmployeeSlice from "./slices/removeEmployeeSlice"
+import deleteEmployeeSlice from "./slices/removeEmployeeSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +11,7 @@ export const store = configureStore({
     deleteStudent: deleteStudentSlice,
     themeToggle: themeSlice,
     employees: employeesSlice,
-    deleteEmployee: deleteEmployeeSlice
+    deleteEmployee: deleteEmployeeSlice,
   },
 });
 

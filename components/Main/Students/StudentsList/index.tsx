@@ -75,7 +75,6 @@ const StudentsList: React.FunctionComponent<StudentsProps> = ({
                       onClick={() => removeStudent(data._id)}
                       className="cursor-pointer text-lg hover:text-cyan-500 duration-150 ease-in"
                     />
-                    <Modal />
                   </TableCell>
                   <TableCell className="dark:text-white" align="right">
                     {data.email}
@@ -90,7 +89,7 @@ const StudentsList: React.FunctionComponent<StudentsProps> = ({
                     {new Date(data.registerDate).toLocaleDateString("fa-IR")}
                   </TableCell>
                   <TableCell className="dark:text-white  " align="right">
-                    {data.isActive ? "فعال" : "غیر فعال"}
+                    <Modal isActive={data.isActive} name={data.fullName} />
                   </TableCell>
                 </TableRow>
               )

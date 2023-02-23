@@ -15,7 +15,7 @@ export const links = [
     title: "داشبورد",
     links: [
       {
-        url: "",
+        url: "dashboard",
         name: "تجارت الکترونیک",
         icon: <FiShoppingBag />,
         id: 1,
@@ -28,19 +28,19 @@ export const links = [
     title: "صفحات",
     links: [
       {
-        url: "students",
+        url: "dashboard/students",
         name: "دانشجویان",
         icon: <RiContactsLine />,
         id: 4,
       },
       {
-        url: "employees",
+        url: "dashboard/employees",
         name: "کارمندان",
         icon: <IoMdContacts />,
         id: 3,
       },
       {
-        url: "orders",
+        url: "dashboard/orders",
         name: "سفارشات",
         icon: <AiOutlineShoppingCart />,
         id: 2,
@@ -52,20 +52,20 @@ export const links = [
     title: "نمودار ها",
     links: [
       {
-        url: "area",
+        url: "dashboard/area",
         name: "سطحی",
         icon: <AiOutlineAreaChart />,
         id: 5,
       },
 
       {
-        url: "bar",
+        url: "dashboard/bar",
         name: "میله ای",
         icon: <AiOutlineBarChart />,
         id: 6,
       },
       {
-        url: "pie",
+        url: "dashboard/pie",
         name: "دایره ای",
         icon: <FiPieChart />,
         id: 7,
