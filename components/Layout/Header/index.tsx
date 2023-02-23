@@ -30,7 +30,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
           onClick={() => signOut({ callbackUrl: "/" })}
           className="text-sm text-red-500 font-semibold tracking-wider"
         >
-          Logout
+          خروج
         </button>
         <button className="cursor-pointer" onClick={() => dispatch(toggle())}>
           {value ? (
